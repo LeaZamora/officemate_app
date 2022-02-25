@@ -1,0 +1,1813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.8.8 on win32)" generated="20220225 22:46:46.161" rpa="false" schemaversion="2">
+<suite id="s1" name="Tests" source="C:\Users\Lea Zamora\PycharmProjects\officemate_app\tests">
+<suite id="s1-s1" name="Search Api Function" source="C:\Users\Lea Zamora\PycharmProjects\officemate_app\tests\search_api_function.robot">
+<test id="s1-s1-t1" name="Do a Get Request of homepage and validate the response code is OK">
+<kw name="Create Session Test" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>https://officemate.co.th/en</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220225 22:46:46.357" level="INFO">Creating Session using : alias=mysession, url=https://officemate.co.th/en, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220225 22:46:46.356" endtime="20220225 22:46:46.357"/>
+</kw>
+<status status="PASS" starttime="20220225 22:46:46.356" endtime="20220225 22:46:46.357"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>https://officemate.co.th/en</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220225 22:46:46.358" level="INFO">Creating Session using : alias=mysession, url=https://officemate.co.th/en, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220225 22:46:46.358" endtime="20220225 22:46:46.358"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<arg>charset=utf-8</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220225 22:46:46.359" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json', 'charset': 'utf-8'}</msg>
+<status status="PASS" starttime="20220225 22:46:46.359" endtime="20220225 22:46:46.359"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/</arg>
+<arg>headers=${headers}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20220225 22:46:47.602" level="INFO">GET Request : url=https://officemate.co.th/en/ (redirected) 
+ path_url=/en/ 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'charset': 'utf-8'} 
+ body=None 
+ </msg>
+<msg timestamp="20220225 22:46:47.603" level="INFO">GET Response : url=https://www.officemate.co.th/en 
+ status=200, reason=OK 
+ headers={'Content-Type': 'text/html; charset=utf-8', 'X-Powered-By': 'Express', 'x-frame-options': 'SAMEORIGIN', 'x-xss-protection': '1; mode=block', 'ETag': 'W/"57acf-KVeyWUXQGwbu2mtiLxF79rGZwro"', 'Content-Encoding': 'gzip', 'X-Akamai-Transformed': '9 - 0 pmb=mRUM,2', 'Date': 'Fri, 25 Feb 2022 15:46:46 GMT', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive, Transfer-Encoding', 'Vary': 'Accept-Encoding', 'Server-Timing': 'edge; dur=33, origin; dur=216, cdn-cache; desc=MISS'} 
+ body=&lt;!doctype html&gt;&lt;html class="no-js" lang="en"&gt;&lt;head&gt;&lt;meta charSet="utf-8"/&gt;&lt;meta http-equiv="x-ua-compatible" content="ie=edge"/&gt;&lt;title&gt;ออฟฟิศเมท (OfficeMate) ที่เดียวครบ ตอบโจทย์ทุกธุรกิจ&lt;/title&gt;&lt;meta name="description" content="ช้อป เครื่องเขียน อุปกรณ์สำนักงาน เฟอร์นิเจอร์ และ อุปกรณ์ไอที ได้ง่ายๆ ได้ตลอด 24 ชั่วโมง โปรโมชั่นและสิทธิพิเศษทุกเดือน รับฟรีคะแนน The 1 Card จัดส่งฟรี* ช้อปเลย!"/&gt;&lt;meta name="viewport" content="width=device-width, initial-scale=1"/&gt;&lt;meta name="apple-itunes-app" content="app-id=984799287"/&gt;&lt;meta name="google-play-app" content="app-id=com.officemate.production"/&gt;&lt;link rel="apple-touch-icon" href="icon.png"/&gt;&lt;link rel="android-touch-icon" href="icon.png"/&gt;&lt;link rel="canonical" href="https://www.officemate.co.th/th"/&gt;&lt;link rel="alternate" hrefLang="en" href="https://www.officemate.co.th/en"/&gt;&lt;link rel="alternate" hrefLang="th" href="https://www.officemate.co.th/th"/&gt;&lt;link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/&gt;&lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/&gt;&lt;meta property="og:site_name" content="www.officemate.co.th"/&gt;&lt;meta property="og:type" content="website"/&gt;&lt;meta property="og:title" content="ออฟฟิศเมท (OfficeMate) ที่เดียวครบ ตอบโจทย์ทุกธุรกิจ"/&gt;&lt;meta property="og:description" content="ช้อป เครื่องเขียน อุปกรณ์สำนักงาน เฟอร์นิเจอร์ และ อุปกรณ์ไอที ได้ง่ายๆ ได้ตลอด 24 ชั่วโมง โปรโมชั่นและสิทธิพิเศษทุกเดือน รับฟรีคะแนน The 1 Card จัดส่งฟรี* ช้อปเลย!"/&gt;&lt;meta property="og:image:type" content="image/jpeg"/&gt;&lt;meta property="og:image:secure_url" content="https://www.officemate.co.th/images/logo.jpg"/&gt;&lt;meta property="og:image" content="http://www.officemate.co.th/images/logo.jpg"/&gt;&lt;meta name="referrer" content="no-referrer-when-downgrade"/&gt;&lt;script&gt;window.NREUM||(NREUM={});NREUM.info = {"agent":"","beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"2f9b82db43","applicationID":"725273723","applicationTime":143.203592,"transactionName":"YVMGYUAACBEFWkBfXlgZIU1CEwMRF1NHGXZzYksaGA==","queueTime":0,"ttGuid":"1f71a2f686ef9e","agentToken":null}; (window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={xpid:"VQMOUF5SABAHVlRQAAIAVFc=",licenseKey:"2f9b82db43",applicationID:"725273723"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&amp;&amp;console.log(t)}catch(e){}}var i,o=t("ee"),a=t(28),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&amp;&amp;"function"==typeof console.log&amp;&amp;(s.console=!0,i.indexOf("dev")!==-1&amp;&amp;(s.dev=!0),i.indexOf("nr_dev")!==-1&amp;&amp;(s.nrDev=!0))}catch(c){}s.nrDev&amp;&amp;o.on("internal-error",function(t){r(t.stack)}),s.dev&amp;&amp;o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&amp;&amp;(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&amp;&amp;u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(29),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&amp;&amp;(t(10),t(9),"addEventListener"in window&amp;&amp;t(6),c.xhrWrappable&amp;&amp;t(11),d=!0)}s.on("fn-start",function(t,e,n){d&amp;&amp;(p+=1)}),s.on("fn-err",function(t,e,n){d&amp;&amp;!n[l]&amp;&amp;(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&amp;&amp;!this.thrown&amp;&amp;p&gt;0&amp;&amp;(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function i(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+l])try{window.performance[h](m,i,!1)}catch(t){}else try{window.performance[h]("webkit"+m,i,!1)}catch(t){}}function o(t){}if(window.performance&amp;&amp;window.performance.timing&amp;&amp;window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(10),f=t(9),u=t(5),d=t(19),l="learResourceTimings",p="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",S=t("loader");if(!S.disabled){S.features.stn=!0,t(8),"addEventListener"in window&amp;&amp;t(6);var O=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof O&amp;&amp;(this.bstStart=S.now())}),a.on(b,function(t,e){var n=t[0];n instanceof O&amp;&amp;s("bst",[n,e,this.bstStart,S.now()])}),c.on(x,function(t,e,n){this.bstStart=S.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),this.bstType])}),f.on(x,function(){this.bstStart=S.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=S.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):p in window.performance&amp;&amp;(window.performance["c"+l]?window.performance[p](m,i,d(!1)):window.performance[p]("webkit"+m,i,d(!1))),document[p]("scroll",o,d(!1)),document[p]("keypress",o,d(!1)),document[p]("click",o,d(!1))}}},{}],5:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&amp;&amp;!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&amp;&amp;i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&amp;&amp;(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&amp;&amp;("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&amp;&amp;(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&amp;&amp;e[m].dt&amp;&amp;(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(29),a=t(28);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&amp;&amp;l&amp;&amp;p&amp;&amp;(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&amp;&amp;(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&amp;&amp;window.history.constructor&amp;&amp;window.history.constructor.prototype,a=window.history;o&amp;&amp;o.pushState&amp;&amp;o.replaceState&amp;&amp;(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],10:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],11:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState&gt;3&amp;&amp;!e.resolved&amp;&amp;(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function o(t){x.push(t),m&amp;&amp;(E?E.then(a):w?w(a):(R=-R,S.data=R))}function a(){for(var t=0;t&lt;x.length;t++)r([],x[t]);x.length&amp;&amp;(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=t(19),p=NREUM.o,h=p.XHR,m=p.MO,v=p.PR,w=p.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,i,l(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),m){var E=v&amp;&amp;v.resolve();if(!w&amp;&amp;!v){var R=1,S=document.createTextNode(R);new m(a).observe(S,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&amp;&amp;t[0].type===g||a()})},{}],12:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)retu... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220225 22:46:47.604" level="INFO">c:\users\lea zamora\anaconda3\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'officemate.co.th'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+c:\users\lea zamora\anaconda3\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.officemate.co.th'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+c:\users\lea zamora\anaconda3\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.officemate.co.th'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220225 22:46:47.605" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20220225 22:46:46.360" endtime="20220225 22:46:47.605"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>200</arg>
+<arg>${response}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20220225 22:46:47.606" endtime="20220225 22:46:47.606"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20220225 22:46:46.355" endtime="20220225 22:46:47.607"/>
+</test>
+<test id="s1-s1-t2" name="Do a POST Request Search and validate the response code is OK when search has query">
+<kw name="Create Session Test" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>https://officemate.co.th/en</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220225 22:46:47.612" level="INFO">Creating Session using : alias=mysession, url=https://officemate.co.th/en, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220225 22:46:47.611" endtime="20220225 22:46:47.612"/>
+</kw>
+<status status="PASS" starttime="20220225 22:46:47.611" endtime="20220225 22:46:47.612"/>
+</kw>
+<kw name="Create POST REQUEST">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/search</arg>
+<arg>params=mobile</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<arg>charset=utf-8</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220225 22:46:47.614" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json', 'charset': 'utf-8'}</msg>
+<status status="PASS" starttime="20220225 22:46:47.614" endtime="20220225 22:46:47.614"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${session}</arg>
+<arg>${endpoint}</arg>
+<arg>params=${params}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20220225 22:46:47.615" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20220225 22:46:49.075" level="INFO">POST Request : url=https://officemate.co.th/en/search?mobile (redirected) 
+ path_url=/en/search?mobile 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20220225 22:46:49.078" level="INFO">GET Response : url=https://www.officemate.co.th/en/search?mobile 
+ status=404, reason=Not Found 
+ headers={'Content-Type': 'text/html; charset=utf-8', 'X-Powered-By': 'Express', 'x-frame-options': 'SAMEORIGIN', 'x-xss-protection': '1; mode=block', 'ETag': 'W/"4f703-kESVFpESnhVexC1PXn44rK2QibU"', 'Content-Encoding': 'gzip', 'Date': 'Fri, 25 Feb 2022 15:46:48 GMT', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive, Transfer-Encoding', 'Vary': 'Accept-Encoding', 'Server-Timing': 'edge; dur=2, origin; dur=825, cdn-cache; desc=MISS'} 
+ body=&lt;!doctype html&gt;&lt;html class="no-js" lang="en"&gt;&lt;head&gt;&lt;meta charSet="utf-8"/&gt;&lt;meta http-equiv="x-ua-compatible" content="ie=edge"/&gt;&lt;title&gt;Page Not Found&lt;/title&gt;&lt;meta name="description" content="Page Not Found"/&gt;&lt;meta name="viewport" content="width=device-width, initial-scale=1"/&gt;&lt;meta name="apple-itunes-app" content="app-id=984799287"/&gt;&lt;meta name="google-play-app" content="app-id=com.officemate.production"/&gt;&lt;link rel="apple-touch-icon" href="icon.png"/&gt;&lt;link rel="android-touch-icon" href="icon.png"/&gt;&lt;link rel="canonical" href="https://www.officemate.co.th/th/search"/&gt;&lt;link rel="alternate" hrefLang="en" href="https://www.officemate.co.th/en/search"/&gt;&lt;link rel="alternate" hrefLang="th" href="https://www.officemate.co.th/th/search"/&gt;&lt;link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/&gt;&lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/&gt;&lt;meta property="og:site_name" content="www.officemate.co.th"/&gt;&lt;meta property="og:type" content="website"/&gt;&lt;meta property="og:title" content="Page Not Found"/&gt;&lt;meta property="og:description" content="Page Not Found"/&gt;&lt;meta property="og:image:type" content="image/jpeg"/&gt;&lt;meta property="og:image:secure_url" content="https://www.officemate.co.th/images/logo.jpg"/&gt;&lt;meta property="og:image" content="http://www.officemate.co.th/images/logo.jpg"/&gt;&lt;meta name="referrer" content="no-referrer-when-downgrade"/&gt;&lt;script&gt;window.NREUM||(NREUM={});NREUM.info = {"agent":"","beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"2f9b82db43","applicationID":"725273723","applicationTime":763.812653,"transactionName":"YVMGYUAACBEFWkBfXlgZIU1CEwMRF1NHGXZzYksaGA==","queueTime":0,"ttGuid":"145f274f00b8760","agentToken":null}; (window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={xpid:"VQMOUF5SABAHVlRQAAIAVFc=",licenseKey:"2f9b82db43",applicationID:"725273723"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&amp;&amp;console.log(t)}catch(e){}}var i,o=t("ee"),a=t(28),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&amp;&amp;"function"==typeof console.log&amp;&amp;(s.console=!0,i.indexOf("dev")!==-1&amp;&amp;(s.dev=!0),i.indexOf("nr_dev")!==-1&amp;&amp;(s.nrDev=!0))}catch(c){}s.nrDev&amp;&amp;o.on("internal-error",function(t){r(t.stack)}),s.dev&amp;&amp;o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&amp;&amp;(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&amp;&amp;u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(29),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&amp;&amp;(t(10),t(9),"addEventListener"in window&amp;&amp;t(6),c.xhrWrappable&amp;&amp;t(11),d=!0)}s.on("fn-start",function(t,e,n){d&amp;&amp;(p+=1)}),s.on("fn-err",function(t,e,n){d&amp;&amp;!n[l]&amp;&amp;(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&amp;&amp;!this.thrown&amp;&amp;p&gt;0&amp;&amp;(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function i(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+l])try{window.performance[h](m,i,!1)}catch(t){}else try{window.performance[h]("webkit"+m,i,!1)}catch(t){}}function o(t){}if(window.performance&amp;&amp;window.performance.timing&amp;&amp;window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(10),f=t(9),u=t(5),d=t(19),l="learResourceTimings",p="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",S=t("loader");if(!S.disabled){S.features.stn=!0,t(8),"addEventListener"in window&amp;&amp;t(6);var O=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof O&amp;&amp;(this.bstStart=S.now())}),a.on(b,function(t,e){var n=t[0];n instanceof O&amp;&amp;s("bst",[n,e,this.bstStart,S.now()])}),c.on(x,function(t,e,n){this.bstStart=S.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),this.bstType])}),f.on(x,function(){this.bstStart=S.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=S.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):p in window.performance&amp;&amp;(window.performance["c"+l]?window.performance[p](m,i,d(!1)):window.performance[p]("webkit"+m,i,d(!1))),document[p]("scroll",o,d(!1)),document[p]("keypress",o,d(!1)),document[p]("click",o,d(!1))}}},{}],5:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&amp;&amp;!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&amp;&amp;i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&amp;&amp;(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&amp;&amp;("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&amp;&amp;(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&amp;&amp;e[m].dt&amp;&amp;(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(29),a=t(28);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&amp;&amp;l&amp;&amp;p&amp;&amp;(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&amp;&amp;(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&amp;&amp;window.history.constructor&amp;&amp;window.history.constructor.prototype,a=window.history;o&amp;&amp;o.pushState&amp;&amp;o.replaceState&amp;&amp;(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],10:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],11:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState&gt;3&amp;&amp;!e.resolved&amp;&amp;(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function o(t){x.push(t),m&amp;&amp;(E?E.then(a):w?w(a):(R=-R,S.data=R))}function a(){for(var t=0;t&lt;x.length;t++)r([],x[t]);x.length&amp;&amp;(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=t(19),p=NREUM.o,h=p.XHR,m=p.MO,v=p.PR,w=p.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,i,l(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),m){var E=v&amp;&amp;v.resolve();if(!w&amp;&amp;!v){var R=1,S=document.createTextNode(R);new m(a).observe(S,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&amp;&amp;t[0].type===g||a()})},{}],12:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&amp;&amp;l())&amp;&amp;(w.traceContextParentHeader=i(h,m),w.traceContextStateHeader=o(h,v,n,r,f)),(t.sameOrigin&amp;&amp;!u()||!t.sameOrigin&amp;&amp;c(t)&amp;&amp;d())&amp;&amp;(w.newrelicHeader=a(h,m,v,n,r,f)),w}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220225 22:46:49.079" level="INFO">c:\users\lea zamora\anaconda3\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'officemate.co.th'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+c:\users\lea zamora\anaconda3\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.officemate.co.th'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220225 22:46:49.082" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220225 22:46:47.615" endtime="20220225 22:46:49.082"/>
+</kw>
+<msg timestamp="20220225 22:46:49.084" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220225 22:46:47.613" endtime="20220225 22:46:49.084"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>'${response.status_code}'</arg>
+<arg>'200'</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20220225 22:46:49.092" level="FAIL">''404'' does not contain ''200''</msg>
+<status status="FAIL" starttime="20220225 22:46:49.086" endtime="20220225 22:46:49.092"/>
+</kw>
+<doc>Send query to api https://officemate.co.th/en/search?mobile.
+It only accepts https://officemate.co.th/en/search/mobile</doc>
+<tag>API</tag>
+<status status="FAIL" starttime="20220225 22:46:47.609" endtime="20220225 22:46:49.095">''404'' does not contain ''200''</status>
+</test>
+<test id="s1-s1-t3" name="Do a Post Request Search with % and validate the response code should not be 404.">
+<kw name="Create Session Test" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>mysession</arg>
+<arg>https://officemate.co.th/en</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20220225 22:46:49.107" level="INFO">Creating Session using : alias=mysession, url=https://officemate.co.th/en, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20220225 22:46:49.106" endtime="20220225 22:46:49.108"/>
+</kw>
+<status status="PASS" starttime="20220225 22:46:49.104" endtime="20220225 22:46:49.109"/>
+</kw>
+<kw name="Create POST REQUEST">
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/search</arg>
+<arg>%</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${headers}</var>
+<arg>Accept=application/json</arg>
+<arg>Content-Type=application/json</arg>
+<arg>charset=utf-8</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20220225 22:46:49.114" level="INFO">${headers} = {'Accept': 'application/json', 'Content-Type': 'application/json', 'charset': 'utf-8'}</msg>
+<status status="PASS" starttime="20220225 22:46:49.113" endtime="20220225 22:46:49.115"/>
+</kw>
+<kw name="Post Request" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${session}</arg>
+<arg>${endpoint}</arg>
+<arg>params=${params}</arg>
+<doc>*DEPRECATED* Please use `POST On Session` instead.</doc>
+<msg timestamp="20220225 22:46:49.115" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20220225 22:46:50.830" level="INFO">POST Request : url=https://officemate.co.th/en/search?% (redirected) 
+ path_url=/en/search?% 
+ headers={'User-Agent': 'python-requests/2.25.1', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg timestamp="20220225 22:46:50.831" level="INFO">GET Response : url=https://www.officemate.co.th/en/search?%25 
+ status=404, reason=Not Found 
+ headers={'Content-Type': 'text/html; charset=utf-8', 'X-Powered-By': 'Express', 'x-frame-options': 'SAMEORIGIN', 'x-xss-protection': '1; mode=block', 'ETag': 'W/"4e849-6+TajW/dwOokyVfXKRQqbrbJBOg"', 'Content-Encoding': 'gzip', 'Date': 'Fri, 25 Feb 2022 15:46:49 GMT', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive, Transfer-Encoding', 'Vary': 'Accept-Encoding', 'Server-Timing': 'edge; dur=1, origin; dur=826, cdn-cache; desc=MISS'} 
+ body=&lt;!doctype html&gt;&lt;html class="no-js" lang="en"&gt;&lt;head&gt;&lt;meta charSet="utf-8"/&gt;&lt;meta http-equiv="x-ua-compatible" content="ie=edge"/&gt;&lt;title&gt;Page Not Found&lt;/title&gt;&lt;meta name="description" content="Page Not Found"/&gt;&lt;meta name="viewport" content="width=device-width, initial-scale=1"/&gt;&lt;meta name="apple-itunes-app" content="app-id=984799287"/&gt;&lt;meta name="google-play-app" content="app-id=com.officemate.production"/&gt;&lt;link rel="apple-touch-icon" href="icon.png"/&gt;&lt;link rel="android-touch-icon" href="icon.png"/&gt;&lt;link rel="canonical" href="https://www.officemate.co.th/th/search"/&gt;&lt;link rel="alternate" hrefLang="en" href="https://www.officemate.co.th/en/search"/&gt;&lt;link rel="alternate" hrefLang="th" href="https://www.officemate.co.th/th/search"/&gt;&lt;link rel="stylesheet" type="text/css" charset="UTF-8" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"/&gt;&lt;link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css"/&gt;&lt;meta property="og:site_name" content="www.officemate.co.th"/&gt;&lt;meta property="og:type" content="website"/&gt;&lt;meta property="og:title" content="Page Not Found"/&gt;&lt;meta property="og:description" content="Page Not Found"/&gt;&lt;meta property="og:image:type" content="image/jpeg"/&gt;&lt;meta property="og:image:secure_url" content="https://www.officemate.co.th/images/logo.jpg"/&gt;&lt;meta property="og:image" content="http://www.officemate.co.th/images/logo.jpg"/&gt;&lt;meta name="referrer" content="no-referrer-when-downgrade"/&gt;&lt;script&gt;window.NREUM||(NREUM={});NREUM.info = {"agent":"","beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"2f9b82db43","applicationID":"725273723","applicationTime":789.906841,"transactionName":"YVMGYUAACBEFWkBfXlgZIU1CEwMRF1NHGXZzYksaGA==","queueTime":0,"ttGuid":"1253cf0dc4eca70","agentToken":null}; (window.NREUM||(NREUM={})).init={privacy:{cookies_enabled:true},ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={xpid:"VQMOUF5SABAHVlRQAAIAVFc=",licenseKey:"2f9b82db43",applicationID:"725273723"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i&lt;n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(t){try{s.console&amp;&amp;console.log(t)}catch(e){}}var i,o=t("ee"),a=t(28),s={};try{i=localStorage.getItem("__nr_flags").split(","),console&amp;&amp;"function"==typeof console.log&amp;&amp;(s.console=!0,i.indexOf("dev")!==-1&amp;&amp;(s.dev=!0),i.indexOf("nr_dev")!==-1&amp;&amp;(s.nrDev=!0))}catch(c){}s.nrDev&amp;&amp;o.on("internal-error",function(t){r(t.stack)}),s.dev&amp;&amp;o.on("fn-err",function(t,e,n){r(n.stack)}),s.dev&amp;&amp;(r("NR AGENT IN DEVELOPMENT MODE"),r("flags: "+a(s,function(t,e){return t}).join(", ")))},{}],2:[function(t,e,n){function r(t,e,n,r,s){try{p?p-=1:i(s||new UncaughtException(t,e,n),!0)}catch(f){try{o("ierr",[f,c.now(),!0])}catch(d){}}return"function"==typeof u&amp;&amp;u.apply(this,a(arguments))}function UncaughtException(t,e,n){this.message=t||"Uncaught error with no additional information",this.sourceURL=e,this.line=n}function i(t,e){var n=e?null:c.now();o("err",[t,n])}var o=t("handle"),a=t(29),s=t("ee"),c=t("loader"),f=t("gos"),u=window.onerror,d=!1,l="nr@seenError";if(!c.disabled){var p=0;c.features.err=!0,t(1),window.onerror=r;try{throw new Error}catch(h){"stack"in h&amp;&amp;(t(10),t(9),"addEventListener"in window&amp;&amp;t(6),c.xhrWrappable&amp;&amp;t(11),d=!0)}s.on("fn-start",function(t,e,n){d&amp;&amp;(p+=1)}),s.on("fn-err",function(t,e,n){d&amp;&amp;!n[l]&amp;&amp;(f(n,l,function(){return!0}),this.thrown=!0,i(n))}),s.on("fn-end",function(){d&amp;&amp;!this.thrown&amp;&amp;p&gt;0&amp;&amp;(p-=1)}),s.on("internal-error",function(t){o("ierr",[t,c.now(),!0])})}},{}],3:[function(t,e,n){var r=t("loader");r.disabled||(r.features.ins=!0)},{}],4:[function(t,e,n){function r(){var t=new PerformanceObserver(function(t,e){var n=t.getEntries();s(v,[n])});try{t.observe({entryTypes:["resource"]})}catch(e){}}function i(t){if(s(v,[window.performance.getEntriesByType(w)]),window.performance["c"+l])try{window.performance[h](m,i,!1)}catch(t){}else try{window.performance[h]("webkit"+m,i,!1)}catch(t){}}function o(t){}if(window.performance&amp;&amp;window.performance.timing&amp;&amp;window.performance.getEntriesByType){var a=t("ee"),s=t("handle"),c=t(10),f=t(9),u=t(5),d=t(19),l="learResourceTimings",p="addEventListener",h="removeEventListener",m="resourcetimingbufferfull",v="bstResource",w="resource",g="-start",y="-end",x="fn"+g,b="fn"+y,E="bstTimer",R="pushState",S=t("loader");if(!S.disabled){S.features.stn=!0,t(8),"addEventListener"in window&amp;&amp;t(6);var O=NREUM.o.EV;a.on(x,function(t,e){var n=t[0];n instanceof O&amp;&amp;(this.bstStart=S.now())}),a.on(b,function(t,e){var n=t[0];n instanceof O&amp;&amp;s("bst",[n,e,this.bstStart,S.now()])}),c.on(x,function(t,e,n){this.bstStart=S.now(),this.bstType=n}),c.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),this.bstType])}),f.on(x,function(){this.bstStart=S.now()}),f.on(b,function(t,e){s(E,[e,this.bstStart,S.now(),"requestAnimationFrame"])}),a.on(R+g,function(t){this.time=S.now(),this.startPath=location.pathname+location.hash}),a.on(R+y,function(t){s("bstHist",[location.pathname+location.hash,this.startPath,this.time])}),u()?(s(v,[window.performance.getEntriesByType("resource")]),r()):p in window.performance&amp;&amp;(window.performance["c"+l]?window.performance[p](m,i,d(!1)):window.performance[p]("webkit"+m,i,d(!1))),document[p]("scroll",o,d(!1)),document[p]("keypress",o,d(!1)),document[p]("click",o,d(!1))}}},{}],5:[function(t,e,n){e.exports=function(){return"PerformanceObserver"in window&amp;&amp;"function"==typeof window.PerformanceObserver}},{}],6:[function(t,e,n){function r(t){for(var e=t;e&amp;&amp;!e.hasOwnProperty(u);)e=Object.getPrototypeOf(e);e&amp;&amp;i(e)}function i(t){s.inPlace(t,[u,d],"-",o)}function o(t,e){return t[1]}var a=t("ee").get("events"),s=t("wrap-function")(a,!0),c=t("gos"),f=XMLHttpRequest,u="addEventListener",d="removeEventListener";e.exports=a,"getPrototypeOf"in Object?(r(document),r(window),r(f.prototype)):f.prototype.hasOwnProperty(u)&amp;&amp;(i(window),i(f.prototype)),a.on(u+"-start",function(t,e){var n=t[1];if(null!==n&amp;&amp;("function"==typeof n||"object"==typeof n)){var r=c(n,"nr@wrapped",function(){function t(){if("function"==typeof n.handleEvent)return n.handleEvent.apply(n,arguments)}var e={object:t,"function":n}[typeof n];return e?s(e,"fn-",null,e.name||"anonymous"):n});this.wrapped=t[1]=r}}),a.on(d+"-start",function(t){t[1]=this.wrapped||t[1]})},{}],7:[function(t,e,n){function r(t,e,n){var r=t[e];"function"==typeof r&amp;&amp;(t[e]=function(){var t=o(arguments),e={};i.emit(n+"before-start",[t],e);var a;e[m]&amp;&amp;e[m].dt&amp;&amp;(a=e[m].dt);var s=r.apply(this,t);return i.emit(n+"start",[t,a],s),s.then(function(t){return i.emit(n+"end",[null,t],s),t},function(t){throw i.emit(n+"end",[t],s),t})})}var i=t("ee").get("fetch"),o=t(29),a=t(28);e.exports=i;var s=window,c="fetch-",f=c+"body-",u=["arrayBuffer","blob","json","text","formData"],d=s.Request,l=s.Response,p=s.fetch,h="prototype",m="nr@context";d&amp;&amp;l&amp;&amp;p&amp;&amp;(a(u,function(t,e){r(d[h],e,f),r(l[h],e,f)}),r(s,"fetch",c),i.on(c+"end",function(t,e){var n=this;if(e){var r=e.headers.get("content-length");null!==r&amp;&amp;(n.rxSize=r),i.emit(c+"done",[null,e],n)}else i.emit(c+"done",[t],n)}))},{}],8:[function(t,e,n){var r=t("ee").get("history"),i=t("wrap-function")(r);e.exports=r;var o=window.history&amp;&amp;window.history.constructor&amp;&amp;window.history.constructor.prototype,a=window.history;o&amp;&amp;o.pushState&amp;&amp;o.replaceState&amp;&amp;(a=o),i.inPlace(a,["pushState","replaceState"],"-")},{}],9:[function(t,e,n){var r=t("ee").get("raf"),i=t("wrap-function")(r),o="equestAnimationFrame";e.exports=r,i.inPlace(window,["r"+o,"mozR"+o,"webkitR"+o,"msR"+o],"raf-"),r.on("raf-start",function(t){t[0]=i(t[0],"fn-")})},{}],10:[function(t,e,n){function r(t,e,n){t[0]=a(t[0],"fn-",null,n)}function i(t,e,n){this.method=n,this.timerDuration=isNaN(t[1])?0:+t[1],t[0]=a(t[0],"fn-",this,n)}var o=t("ee").get("timer"),a=t("wrap-function")(o),s="setTimeout",c="setInterval",f="clearTimeout",u="-start",d="-";e.exports=o,a.inPlace(window,[s,"setImmediate"],s+d),a.inPlace(window,[c],c+d),a.inPlace(window,[f,"clearImmediate"],f+d),o.on(c+u,r),o.on(s+u,i)},{}],11:[function(t,e,n){function r(t,e){d.inPlace(e,["onreadystatechange"],"fn-",s)}function i(){var t=this,e=u.context(t);t.readyState&gt;3&amp;&amp;!e.resolved&amp;&amp;(e.resolved=!0,u.emit("xhr-resolved",[],t)),d.inPlace(t,y,"fn-",s)}function o(t){x.push(t),m&amp;&amp;(E?E.then(a):w?w(a):(R=-R,S.data=R))}function a(){for(var t=0;t&lt;x.length;t++)r([],x[t]);x.length&amp;&amp;(x=[])}function s(t,e){return e}function c(t,e){for(var n in t)e[n]=t[n];return e}t(6);var f=t("ee"),u=f.get("xhr"),d=t("wrap-function")(u),l=t(19),p=NREUM.o,h=p.XHR,m=p.MO,v=p.PR,w=p.SI,g="readystatechange",y=["onload","onerror","onabort","onloadstart","onloadend","onprogress","ontimeout"],x=[];e.exports=u;var b=window.XMLHttpRequest=function(t){var e=new h(t);try{u.emit("new-xhr",[e],e),e.addEventListener(g,i,l(!1))}catch(n){try{u.emit("internal-error",[n])}catch(r){}}return e};if(c(h,b),b.prototype=h.prototype,d.inPlace(b.prototype,["open","send"],"-xhr-",s),u.on("send-xhr-start",function(t,e){r(t,e),o(e)}),u.on("open-xhr-start",r),m){var E=v&amp;&amp;v.resolve();if(!w&amp;&amp;!v){var R=1,S=document.createTextNode(R);new m(a).observe(S,{characterData:!0})}}else f.on("fn-end",function(t){t[0]&amp;&amp;t[0].type===g||a()})},{}],12:[function(t,e,n){function r(t){if(!s(t))return null;var e=window.NREUM;if(!e.loader_config)return null;var n=(e.loader_config.accountID||"").toString()||null,r=(e.loader_config.agentID||"").toString()||null,f=(e.loader_config.trustKey||"").toString()||null;if(!n||!r)return null;var h=p.generateSpanId(),m=p.generateTraceId(),v=Date.now(),w={spanId:h,traceId:m,timestamp:v};return(t.sameOrigin||c(t)&amp;&amp;l())&amp;&amp;(w.traceContextParentHeader=i(h,m),w.traceContextStateHeader=o(h,v,n,r,f)),(t.sameOrigin&amp;&amp;!u()||!t.sameOrigin&amp;&amp;c(t)&amp;&amp;d())&amp;&amp;(w.newrelicHeader=a(h,m,v,n,r,f)),w}function i(t,e){return"00-"+e+"-"+t+"-01"}function o(t,e,n,... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20220225 22:46:50.832" level="INFO">c:\users\lea zamora\anaconda3\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'officemate.co.th'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+c:\users\lea zamora\anaconda3\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'www.officemate.co.th'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20220225 22:46:50.833" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220225 22:46:49.115" endtime="20220225 22:46:50.833"/>
+</kw>
+<msg timestamp="20220225 22:46:50.834" level="INFO">${response} = &lt;Response [404]&gt;</msg>
+<status status="PASS" starttime="20220225 22:46:49.111" endtime="20220225 22:46:50.834"/>
+</kw>
+<kw name="Should Not Contain" library="BuiltIn">
+<arg>'${response.status_code}'</arg>
+<arg>'404'</arg>
+<doc>Fails if ``container`` contains ``item`` one or more times.</doc>
+<msg timestamp="20220225 22:46:50.836" level="FAIL">''404'' contains ''404''</msg>
+<status status="FAIL" starttime="20220225 22:46:50.835" endtime="20220225 22:46:50.837"/>
+</kw>
+<doc>Send query to api https://officemate.co.th/en/search?mobile.
+It only accepts https://officemate.co.th/en/search/mobile</doc>
+<tag>API</tag>
+<status status="FAIL" starttime="20220225 22:46:49.101" endtime="20220225 22:46:50.838">''404'' contains ''404''</status>
+</test>
+<status status="FAIL" starttime="20220225 22:46:46.198" endtime="20220225 22:46:50.841"/>
+</suite>
+<suite id="s1-s2" name="Search Function" source="C:\Users\Lea Zamora\PycharmProjects\officemate_app\tests\search_function.robot">
+<test id="s1-s2-t1" name="Verify count of products is correctly displayed on the search result page for a particular search item.">
+<kw name="Navigate to Homepage" library="common" type="SETUP">
+<arg>${base_url}</arg>
+<arg>${browser}</arg>
+<arg>${home_page_title}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220225 22:46:51.062" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220225 22:46:51.062" endtime="20220225 22:46:52.822"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220225 22:46:52.823" level="INFO">Opening url 'https://www.officemate.co.th/en'</msg>
+<status status="PASS" starttime="20220225 22:46:52.822" endtime="20220225 22:47:00.303"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Title Should Be</arg>
+<arg>${title_page}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${title_page}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220225 22:47:00.329" level="INFO">Page title is 'ออฟฟิศเมท (OfficeMate) ที่เดียวครบ ตอบโจทย์ทุกธุรกิจ'.</msg>
+<status status="PASS" starttime="20220225 22:47:00.304" endtime="20220225 22:47:00.329"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:00.304" endtime="20220225 22:47:00.329"/>
+</kw>
+<status status="PASS" starttime="20220225 22:46:51.061" endtime="20220225 22:47:00.330"/>
+</kw>
+<kw name="Input and search item" library="common">
+<arg>${search_bar_xpath}</arg>
+<arg>${valid_item}</arg>
+<arg>${search_button_element}</arg>
+<arg>timeout=${timeout}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field_locator}</arg>
+<arg>${item_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220225 22:47:00.334" level="INFO">Typing text 'Mobile' into text field '//input[@class='_5vxBY _32CNv _2MLml']'.</msg>
+<status status="PASS" starttime="20220225 22:47:00.333" endtime="20220225 22:47:00.617"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${btn_locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220225 22:47:00.618" endtime="20220225 22:47:00.642"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220225 22:47:00.643" level="INFO">Clicking element '//div[@id='btn-searchResultPage']'.</msg>
+<status status="PASS" starttime="20220225 22:47:00.642" endtime="20220225 22:47:00.862"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:00.331" endtime="20220225 22:47:00.863"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${product_class}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220225 22:47:00.864" endtime="20220225 22:47:05.822"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${product_class}</arg>
+<arg>limit=45</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20220225 22:47:05.850" level="INFO">Current page contains 45 element(s).</msg>
+<status status="PASS" starttime="20220225 22:47:05.823" endtime="20220225 22:47:05.850"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220225 22:47:05.851" endtime="20220225 22:47:08.208"/>
+</kw>
+<tag>TEST_1</tag>
+<status status="PASS" starttime="20220225 22:46:51.060" endtime="20220225 22:47:08.209"/>
+</test>
+<test id="s1-s2-t2" name="Verify search bar input valid item name should be successful">
+<kw name="Navigate to Homepage" library="common" type="SETUP">
+<arg>${base_url}</arg>
+<arg>${browser}</arg>
+<arg>${home_page_title}</arg>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>about:blank</arg>
+<arg>${browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220225 22:47:08.212" level="INFO">Opening browser 'chrome' to base url 'about:blank'.</msg>
+<status status="PASS" starttime="20220225 22:47:08.212" endtime="20220225 22:47:09.737"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>${url}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20220225 22:47:09.738" level="INFO">Opening url 'https://www.officemate.co.th/en'</msg>
+<status status="PASS" starttime="20220225 22:47:09.737" endtime="20220225 22:47:17.101"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Title Should Be</arg>
+<arg>${title_page}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<arg>${title_page}</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<msg timestamp="20220225 22:47:17.156" level="INFO">Page title is 'ออฟฟิศเมท (OfficeMate) ที่เดียวครบ ตอบโจทย์ทุกธุรกิจ'.</msg>
+<status status="PASS" starttime="20220225 22:47:17.102" endtime="20220225 22:47:17.157"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:17.101" endtime="20220225 22:47:17.157"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:08.211" endtime="20220225 22:47:17.157"/>
+</kw>
+<kw name="Input and search item" library="common">
+<arg>${search_bar_xpath}</arg>
+<arg>${valid_item}</arg>
+<arg>${search_button_element}</arg>
+<arg>timeout=${timeout}</arg>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${input_field_locator}</arg>
+<arg>${item_name}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20220225 22:47:17.160" level="INFO">Typing text 'Mobile' into text field '//input[@class='_5vxBY _32CNv _2MLml']'.</msg>
+<status status="PASS" starttime="20220225 22:47:17.159" endtime="20220225 22:47:19.435"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${btn_locator}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220225 22:47:19.435" endtime="20220225 22:47:19.889"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${btn_locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20220225 22:47:19.892" level="INFO">Clicking element '//div[@id='btn-searchResultPage']'.</msg>
+<status status="PASS" starttime="20220225 22:47:19.890" endtime="20220225 22:47:20.649"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:17.158" endtime="20220225 22:47:20.650"/>
+</kw>
+<kw name="Wait Until Page Contains Element" library="SeleniumLibrary">
+<arg>${product_class}</arg>
+<arg>timeout=${timeout}</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" starttime="20220225 22:47:20.651" endtime="20220225 22:47:23.220"/>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<var>${element_list}</var>
+<arg>${product_class}</arg>
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<msg timestamp="20220225 22:47:23.438" level="INFO">${element_list} = [&lt;selenium.webdriver.remote.webelement.WebElement (session="e6c9e5dacbf4d5417f1e4cf19674a215", element="cc5234db-3eb0-4d5e-9b2c-7a7be0eec01a")&gt;, &lt;selenium.webdriver.remote.webelement.WebElement (sessi...</msg>
+<status status="PASS" starttime="20220225 22:47:23.221" endtime="20220225 22:47:23.438"/>
+</kw>
+<kw name="Get Length" library="BuiltIn">
+<var>${count}</var>
+<arg>${element_list}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<msg timestamp="20220225 22:47:23.439" level="INFO">Length is 45</msg>
+<msg timestamp="20220225 22:47:23.439" level="INFO">${count} = 45</msg>
+<status status="PASS" starttime="20220225 22:47:23.438" endtime="20220225 22:47:23.439"/>
+</kw>
+<for flavor="IN RANGE">
+<var>${i}</var>
+<value>${count}</value>
+<iter>
+<var name="${i}">0</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:23.591" level="INFO">${actual} = Z-Touch Mobile Pad Mobile Pad (Blue)
+OFM0010868
+฿ 159.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:23.440" endtime="20220225 22:47:23.592"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:23.592" endtime="20220225 22:47:23.596"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:23.592" endtime="20220225 22:47:23.596"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:23.440" endtime="20220225 22:47:23.596"/>
+</iter>
+<iter>
+<var name="${i}">1</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:23.917" level="INFO">${actual} = Z-Touch Sterile Mobile Pad Mobile Pad (White)
+OFM0010870
+฿ 159.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:23.597" endtime="20220225 22:47:23.917"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:23.918" endtime="20220225 22:47:23.922"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:23.918" endtime="20220225 22:47:23.922"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:23.597" endtime="20220225 22:47:23.922"/>
+</iter>
+<iter>
+<var name="${i}">2</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.224" level="INFO">${actual} = Z-Touch Mobile Pad Mobile Pad (Blcak)
+OFM0010869
+฿ 159.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:23.923" endtime="20220225 22:47:24.224"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.225" endtime="20220225 22:47:24.227"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.225" endtime="20220225 22:47:24.227"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:23.922" endtime="20220225 22:47:24.227"/>
+</iter>
+<iter>
+<var name="${i}">3</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.336" level="INFO">${actual} = SAVE
+17%
+CARBEST Mobile Phone Holder Black color
+OFMY047853
+฿ 183.00
+฿ 220.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:24.227" endtime="20220225 22:47:24.336"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.337" endtime="20220225 22:47:24.338"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.336" endtime="20220225 22:47:24.338"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.227" endtime="20220225 22:47:24.339"/>
+</iter>
+<iter>
+<var name="${i}">4</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.408" level="INFO">${actual} = Black Flexible Long Arm Mobile Phone Holder
+MKP0540662
+฿ 339.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:24.339" endtime="20220225 22:47:24.408"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.408" endtime="20220225 22:47:24.411"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.408" endtime="20220225 22:47:24.411"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.339" endtime="20220225 22:47:24.411"/>
+</iter>
+<iter>
+<var name="${i}">5</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.505" level="INFO">${actual} = Furradec BBF Mobile Steel Pedestal
+CONA004172
+Other Options
++
+฿ 5,330.00
+Compare
+Show options</msg>
+<status status="PASS" starttime="20220225 22:47:24.411" endtime="20220225 22:47:24.505"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.505" endtime="20220225 22:47:24.507"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.505" endtime="20220225 22:47:24.507"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.411" endtime="20220225 22:47:24.507"/>
+</iter>
+<iter>
+<var name="${i}">6</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.628" level="INFO">${actual} = SAVE
+20%
+Z-TOUCH MOBILE ANTIMICROBIAL สีีขาว
+MKP1042039
+฿ 159.00
+฿ 199.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:24.507" endtime="20220225 22:47:24.628"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.628" endtime="20220225 22:47:24.630"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.628" endtime="20220225 22:47:24.630"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.507" endtime="20220225 22:47:24.630"/>
+</iter>
+<iter>
+<var name="${i}">7</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.727" level="INFO">${actual} = SAVE
+20%
+Z-TOUCH MOBILE ANTIMICROBIAL สีดำ
+MKP1042041
+฿ 159.00
+฿ 199.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:24.631" endtime="20220225 22:47:24.727"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.727" endtime="20220225 22:47:24.729"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.727" endtime="20220225 22:47:24.729"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.630" endtime="20220225 22:47:24.729"/>
+</iter>
+<iter>
+<var name="${i}">8</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.814" level="INFO">${actual} = SAVE
+20%
+Z-TOUCH MOBILE ANTIMICROBIAL สีดำ
+MKP1042046
+฿ 159.00
+฿ 199.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:24.729" endtime="20220225 22:47:24.814"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.815" endtime="20220225 22:47:24.817"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.814" endtime="20220225 22:47:24.817"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.729" endtime="20220225 22:47:24.817"/>
+</iter>
+<iter>
+<var name="${i}">9</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.866" level="INFO">${actual} = SAVE
+50%
+FEIYU Handheld Gimbal for Mobile Phone FYU-VIMBLE C
+OFMY045825
+฿ 1,995.00
+฿ 3,990.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:24.817" endtime="20220225 22:47:24.866"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.867" endtime="20220225 22:47:24.868"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.866" endtime="20220225 22:47:24.868"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.817" endtime="20220225 22:47:24.868"/>
+</iter>
+<iter>
+<var name="${i}">10</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.918" level="INFO">${actual} = MOBILE SUIT GUNDAM IRON-BLOODED ORPHANS เล่ม 3
+MKP0407254
+฿ 145.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:24.869" endtime="20220225 22:47:24.918"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.919" endtime="20220225 22:47:24.920"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.918" endtime="20220225 22:47:24.920"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.868" endtime="20220225 22:47:24.920"/>
+</iter>
+<iter>
+<var name="${i}">11</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:24.973" level="INFO">${actual} = MOBILE SUIT GUNDAM IRON-BlOODED ORPHANS เล่ม 1
+MKP0407369
+฿ 145.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:24.921" endtime="20220225 22:47:24.973"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:24.974" endtime="20220225 22:47:24.975"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.973" endtime="20220225 22:47:24.975"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.920" endtime="20220225 22:47:24.975"/>
+</iter>
+<iter>
+<var name="${i}">12</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.061" level="INFO">${actual} = พัฒนา Mobile App ด้วย Android Studio
+MKP0224296
+฿ 229.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:24.975" endtime="20220225 22:47:25.061"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.062" endtime="20220225 22:47:25.063"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.062" endtime="20220225 22:47:25.063"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:24.975" endtime="20220225 22:47:25.064"/>
+</iter>
+<iter>
+<var name="${i}">13</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.108" level="INFO">${actual} = MOBILE SUIT GUNDAM IRON-BLOODED ORPHANS เล่ม 2
+MKP0407531
+฿ 145.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.064" endtime="20220225 22:47:25.108"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.109" endtime="20220225 22:47:25.110"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.109" endtime="20220225 22:47:25.110"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.064" endtime="20220225 22:47:25.111"/>
+</iter>
+<iter>
+<var name="${i}">14</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.168" level="INFO">${actual} = SAVE
+16%
+พัฒนา Mobile App ด้วย Flutter &amp; Dart
+MKP0644095
+฿ 286.00
+฿ 340.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.111" endtime="20220225 22:47:25.168"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.169" endtime="20220225 22:47:25.172"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.168" endtime="20220225 22:47:25.172"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.111" endtime="20220225 22:47:25.172"/>
+</iter>
+<iter>
+<var name="${i}">15</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.248" level="INFO">${actual} = rbs Shopping Mobile Cabinet White-Black Color 40 Piece
+OFMY060645
+฿ 2,500.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.173" endtime="20220225 22:47:25.248"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.249" endtime="20220225 22:47:25.251"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.248" endtime="20220225 22:47:25.251"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.173" endtime="20220225 22:47:25.251"/>
+</iter>
+<iter>
+<var name="${i}">16</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.310" level="INFO">${actual} = Black - Bluetooth Headphones for Laptop/Mobile Phone Stealth UC
+MKP0880696
+฿ 5,990.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.251" endtime="20220225 22:47:25.310"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.310" endtime="20220225 22:47:25.312"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.310" endtime="20220225 22:47:25.312"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.251" endtime="20220225 22:47:25.312"/>
+</iter>
+<iter>
+<var name="${i}">17</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.383" level="INFO">${actual} = Film Screen Protecter of Mobile For Huawei nova 9 9H+ Bull Armors
+MKP1087569
+฿ 490.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.312" endtime="20220225 22:47:25.383"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.383" endtime="20220225 22:47:25.385"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.383" endtime="20220225 22:47:25.385"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.312" endtime="20220225 22:47:25.385"/>
+</iter>
+<iter>
+<var name="${i}">18</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.443" level="INFO">${actual} = Film Screen Protecter of Mobile For Samsung Galaxy S20 9H+ Bull Armors
+MKP1075032
+฿ 490.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.385" endtime="20220225 22:47:25.443"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.444" endtime="20220225 22:47:25.446"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.444" endtime="20220225 22:47:25.446"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.385" endtime="20220225 22:47:25.446"/>
+</iter>
+<iter>
+<var name="${i}">19</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.503" level="INFO">${actual} = Film Screen Protecter of Mobile For OnePlus Nord CE 5G 9H+ Bull Armors
+MKP1087805
+฿ 490.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.446" endtime="20220225 22:47:25.503"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.504" endtime="20220225 22:47:25.506"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.504" endtime="20220225 22:47:25.506"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.446" endtime="20220225 22:47:25.506"/>
+</iter>
+<iter>
+<var name="${i}">20</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.553" level="INFO">${actual} = Film Screen Protecter of Mobile For TCL 20 R 5G 9H+ Bull Armors
+MKP1087554
+฿ 390.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.506" endtime="20220225 22:47:25.553"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.553" endtime="20220225 22:47:25.555"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.553" endtime="20220225 22:47:25.555"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.506" endtime="20220225 22:47:25.555"/>
+</iter>
+<iter>
+<var name="${i}">21</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.614" level="INFO">${actual} = Film Screen Protecter of Mobile For Samsung Galaxy S21 Plus 9H+ Bull Armors
+MKP1074931
+฿ 590.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.555" endtime="20220225 22:47:25.614"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.614" endtime="20220225 22:47:25.616"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.614" endtime="20220225 22:47:25.616"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.555" endtime="20220225 22:47:25.616"/>
+</iter>
+<iter>
+<var name="${i}">22</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.673" level="INFO">${actual} = แต่งภาพถ่ายด้วย Lightroom Classic CC &amp; Lightroom CC / Mobile
+MKP0297924
+฿ 325.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.616" endtime="20220225 22:47:25.673"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.674" endtime="20220225 22:47:25.675"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.673" endtime="20220225 22:47:25.675"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.616" endtime="20220225 22:47:25.675"/>
+</iter>
+<iter>
+<var name="${i}">23</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.723" level="INFO">${actual} = SAVE
+12%
+OTHER MONSTER HUNTER 4 MOBILE BATTERY (MERAROU) (ASIA)
+MKP0544368
+฿ 1,400.00
+฿ 1,590.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.675" endtime="20220225 22:47:25.723"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.724" endtime="20220225 22:47:25.726"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.723" endtime="20220225 22:47:25.726"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.675" endtime="20220225 22:47:25.726"/>
+</iter>
+<iter>
+<var name="${i}">24</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.773" level="INFO">${actual} = SAVE
+16%
+พัฒนา Mobile App บนระบบ Android ด้วย Kotlin
+MKP0370010
+฿ 319.00
+฿ 380.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.726" endtime="20220225 22:47:25.773"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.773" endtime="20220225 22:47:25.775"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.773" endtime="20220225 22:47:25.775"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.726" endtime="20220225 22:47:25.775"/>
+</iter>
+<iter>
+<var name="${i}">25</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.820" level="INFO">${actual} = PSP MOBILE SUIT GUNDAM AGE: COSMIC DRIVE (JAPAN)
+MKP0547534
+฿ 390.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.776" endtime="20220225 22:47:25.820"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.821" endtime="20220225 22:47:25.822"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.820" endtime="20220225 22:47:25.822"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.775" endtime="20220225 22:47:25.822"/>
+</iter>
+<iter>
+<var name="${i}">26</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.872" level="INFO">${actual} = PSP MOBILE SUIT GUNDAM AGE: UNIVERSE ACCEL (JAPAN)
+MKP0547535
+฿ 390.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.823" endtime="20220225 22:47:25.872"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.872" endtime="20220225 22:47:25.874"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.872" endtime="20220225 22:47:25.874"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.823" endtime="20220225 22:47:25.874"/>
+</iter>
+<iter>
+<var name="${i}">27</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.921" level="INFO">${actual} = PS3 MOBILE SUIT GUNDAM SIDE STORIES (CHINESE SUB) (ASIA)
+MKP0403276
+฿ 1,690.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.874" endtime="20220225 22:47:25.921"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.922" endtime="20220225 22:47:25.923"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.921" endtime="20220225 22:47:25.923"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.874" endtime="20220225 22:47:25.923"/>
+</iter>
+<iter>
+<var name="${i}">28</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:25.973" level="INFO">${actual} = SAVE
+11%
+OfficeIntrend CS-03 Mobile Pedestal
+OFMA011757
+฿ 3,890.00
+฿ 4,390.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.923" endtime="20220225 22:47:25.973"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:25.974" endtime="20220225 22:47:25.975"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.973" endtime="20220225 22:47:25.975"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.923" endtime="20220225 22:47:25.975"/>
+</iter>
+<iter>
+<var name="${i}">29</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.025" level="INFO">${actual} = SAVE
+11%
+OfficeIntrend MS-04 Mobile Pedestal
+OFMA011754
+฿ 3,190.00
+฿ 3,600.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:25.975" endtime="20220225 22:47:26.025"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:26.025" endtime="20220225 22:47:26.027"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.025" endtime="20220225 22:47:26.028"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:25.975" endtime="20220225 22:47:26.028"/>
+</iter>
+<iter>
+<var name="${i}">30</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.076" level="INFO">${actual} = SAVE
+11%
+OfficeIntrend CS-04 Mobile Pedestal
+OFMA011756
+฿ 3,890.00
+฿ 4,390.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.028" endtime="20220225 22:47:26.076"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:26.077" endtime="20220225 22:47:26.078"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.076" endtime="20220225 22:47:26.078"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.028" endtime="20220225 22:47:26.079"/>
+</iter>
+<iter>
+<var name="${i}">31</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.122" level="INFO">${actual} = SAVE
+11%
+OfficeIntrend MS-03 Mobile Pedestal
+OFMA011755
+฿ 3,190.00
+฿ 3,600.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.079" endtime="20220225 22:47:26.122"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:26.122" endtime="20220225 22:47:26.124"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.122" endtime="20220225 22:47:26.124"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.079" endtime="20220225 22:47:26.124"/>
+</iter>
+<iter>
+<var name="${i}">32</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.176" level="INFO">${actual} = SAVE
+49%
+Furradec BS-1712 Mobile Pedestal Beech
+OFMA011028
+฿ 1,890.00
+฿ 3,670.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.124" endtime="20220225 22:47:26.176"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:26.176" endtime="20220225 22:47:26.178"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.176" endtime="20220225 22:47:26.178"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.124" endtime="20220225 22:47:26.178"/>
+</iter>
+<iter>
+<var name="${i}">33</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.223" level="INFO">${actual} = SAVE
+9%
+Gasoline Engine MOBIL1, 4 L. 5W-30
+MKP0406310
+฿ 2,450.00
+฿ 2,700.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.178" endtime="20220225 22:47:26.223"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20220225 22:47:26.225" level="FAIL">'SAVE
+9%
+GASOLINE ENGINE MOBIL1, 4 L. 5W-30
+MKP0406310
+฿ 2,450.00
+฿ 2,700.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'</msg>
+<status status="FAIL" starttime="20220225 22:47:26.223" endtime="20220225 22:47:26.225"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.223" endtime="20220225 22:47:26.225"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.178" endtime="20220225 22:47:26.225"/>
+</iter>
+<iter>
+<var name="${i}">34</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.272" level="INFO">${actual} = SAVE
+9%
+Diesel Engine MOBIL 3000 6+1 L. 5W-30
+MKP0406316
+฿ 1,645.00
+฿ 1,800.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.225" endtime="20220225 22:47:26.272"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20220225 22:47:26.274" level="FAIL">'SAVE
+9%
+DIESEL ENGINE MOBIL 3000 6+1 L. 5W-30
+MKP0406316
+฿ 1,645.00
+฿ 1,800.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'</msg>
+<status status="FAIL" starttime="20220225 22:47:26.273" endtime="20220225 22:47:26.274"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.272" endtime="20220225 22:47:26.275"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.225" endtime="20220225 22:47:26.275"/>
+</iter>
+<iter>
+<var name="${i}">35</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.324" level="INFO">${actual} = SAVE
+6%
+MOBIL Semi Synthetic 2000 Turbospeed 1 L. 10W-30
+MKP0406321
+฿ 235.00
+฿ 250.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.275" endtime="20220225 22:47:26.324"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20220225 22:47:26.326" level="FAIL">'SAVE
+6%
+MOBIL SEMI SYNTHETIC 2000 TURBOSPEED 1 L. 10W-30
+MKP0406321
+฿ 235.00
+฿ 250.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'</msg>
+<status status="FAIL" starttime="20220225 22:47:26.325" endtime="20220225 22:47:26.326"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.324" endtime="20220225 22:47:26.327"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.275" endtime="20220225 22:47:26.327"/>
+</iter>
+<iter>
+<var name="${i}">36</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.370" level="INFO">${actual} = SAVE
+9%
+Gasoline Engine MOBIL1, 4 L. 0W-40
+MKP0406295
+฿ 2,550.00
+฿ 2,810.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.327" endtime="20220225 22:47:26.370"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20220225 22:47:26.372" level="FAIL">'SAVE
+9%
+GASOLINE ENGINE MOBIL1, 4 L. 0W-40
+MKP0406295
+฿ 2,550.00
+฿ 2,810.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'</msg>
+<status status="FAIL" starttime="20220225 22:47:26.371" endtime="20220225 22:47:26.372"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.371" endtime="20220225 22:47:26.373"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.327" endtime="20220225 22:47:26.373"/>
+</iter>
+<iter>
+<var name="${i}">37</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.422" level="INFO">${actual} = SAVE
+10%
+Gasoline Engine MOBIL1, 1 L. 5W-30
+MKP0406289
+฿ 650.00
+฿ 720.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.373" endtime="20220225 22:47:26.422"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20220225 22:47:26.424" level="FAIL">'SAVE
+10%
+GASOLINE ENGINE MOBIL1, 1 L. 5W-30
+MKP0406289
+฿ 650.00
+฿ 720.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'</msg>
+<status status="FAIL" starttime="20220225 22:47:26.423" endtime="20220225 22:47:26.425"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.422" endtime="20220225 22:47:26.425"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.373" endtime="20220225 22:47:26.425"/>
+</iter>
+<iter>
+<var name="${i}">38</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.472" level="INFO">${actual} = SAVE
+10%
+Gasoline Engine MOBIL 3000 1 L. 0W-20
+MKP0406294
+฿ 325.00
+฿ 360.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.425" endtime="20220225 22:47:26.472"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20220225 22:47:26.474" level="FAIL">'SAVE
+10%
+GASOLINE ENGINE MOBIL 3000 1 L. 0W-20
+MKP0406294
+฿ 325.00
+฿ 360.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'</msg>
+<status status="FAIL" starttime="20220225 22:47:26.473" endtime="20220225 22:47:26.474"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.472" endtime="20220225 22:47:26.475"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.425" endtime="20220225 22:47:26.475"/>
+</iter>
+<iter>
+<var name="${i}">39</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.521" level="INFO">${actual} = SAVE
+10%
+Gasoline Engine MOBIL1, 1 ลิตร 0W-40
+MKP0406298
+฿ 695.00
+฿ 770.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.475" endtime="20220225 22:47:26.521"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<msg timestamp="20220225 22:47:26.523" level="FAIL">'SAVE
+10%
+GASOLINE ENGINE MOBIL1, 1 ลิตร 0W-40
+MKP0406298
+฿ 695.00
+฿ 770.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'</msg>
+<status status="FAIL" starttime="20220225 22:47:26.521" endtime="20220225 22:47:26.523"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.521" endtime="20220225 22:47:26.523"/>
+</kw>
+<status status="FAIL" starttime="20220225 22:47:26.475" endtime="20220225 22:47:26.523"/>
+</iter>
+<iter>
+<var name="${i}">40</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.572" level="INFO">${actual} = Film Screen Protecter of Mobile For Samsung Galaxy M22 9H+ Bull Armors
+MKP1087582
+฿ 390.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.524" endtime="20220225 22:47:26.572"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:26.573" endtime="20220225 22:47:26.574"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.572" endtime="20220225 22:47:26.574"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.524" endtime="20220225 22:47:26.574"/>
+</iter>
+<iter>
+<var name="${i}">41</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.619" level="INFO">${actual} = Film Screen Protecter of Mobile For Samsung Galaxy M52 5G 9H+ Bull Armors
+MKP1087580
+฿ 390.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.575" endtime="20220225 22:47:26.619"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:26.619" endtime="20220225 22:47:26.620"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.619" endtime="20220225 22:47:26.620"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.575" endtime="20220225 22:47:26.620"/>
+</iter>
+<iter>
+<var name="${i}">42</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.664" level="INFO">${actual} = Furradec UNBF6050 Mobile Shelf Beech
+OFMA009697
+฿ 4,210.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.621" endtime="20220225 22:47:26.665"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:26.665" endtime="20220225 22:47:26.666"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.665" endtime="20220225 22:47:26.666"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.621" endtime="20220225 22:47:26.667"/>
+</iter>
+<iter>
+<var name="${i}">43</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.715" level="INFO">${actual} = SAVE
+25%
+Furradec CBN-5149 Mobile Pedestal Cabinet
+OFMA012199
+฿ 1,800.00
+฿ 2,400.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.667" endtime="20220225 22:47:26.715"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:26.716" endtime="20220225 22:47:26.717"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.716" endtime="20220225 22:47:26.717"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.667" endtime="20220225 22:47:26.717"/>
+</iter>
+<iter>
+<var name="${i}">44</var>
+<kw name="Set Variable" library="BuiltIn">
+<var>${actual}</var>
+<arg>${element_list[${i}].text}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220225 22:47:26.771" level="INFO">${actual} = SAVE
+15%
+Furradec PDB3 Mobile Pedestal White
+OFMA002944
+฿ 4,750.00
+฿ 5,575.00
+Compare
+Add to cart</msg>
+<status status="PASS" starttime="20220225 22:47:26.718" endtime="20220225 22:47:26.771"/>
+</kw>
+<kw name="Run Keyword And Continue On Failure" library="BuiltIn">
+<arg>Should Contain</arg>
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Runs the keyword and continues execution even if a failure occurs.</doc>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${actual.upper()}</arg>
+<arg>${valid_item.upper()}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20220225 22:47:26.772" endtime="20220225 22:47:26.773"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.771" endtime="20220225 22:47:26.773"/>
+</kw>
+<status status="PASS" starttime="20220225 22:47:26.717" endtime="20220225 22:47:26.773"/>
+</iter>
+<status status="FAIL" starttime="20220225 22:47:23.440" endtime="20220225 22:47:26.773"/>
+</for>
+<kw name="Close Browser" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220225 22:47:26.774" endtime="20220225 22:47:29.129"/>
+</kw>
+<tag>TEST_2</tag>
+<status status="FAIL" starttime="20220225 22:47:08.210" endtime="20220225 22:47:29.130">Several failures occurred:
+
+1) 'SAVE
+9%
+GASOLINE ENGINE MOBIL1, 4 L. 5W-30
+MKP0406310
+฿ 2,450.00
+฿ 2,700.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'
+
+2) 'SAVE
+9%
+DIESEL ENGINE MOBIL 3000 6+1 L. 5W-30
+MKP0406316
+฿ 1,645.00
+฿ 1,800.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'
+
+    [ Message content over the limit has been removed. ]
+COMPARE
+ADD TO CART' does not contain 'MOBILE'
+
+6) 'SAVE
+10%
+GASOLINE ENGINE MOBIL 3000 1 L. 0W-20
+MKP0406294
+฿ 325.00
+฿ 360.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'
+
+7) 'SAVE
+10%
+GASOLINE ENGINE MOBIL1, 1 ลิตร 0W-40
+MKP0406298
+฿ 695.00
+฿ 770.00
+COMPARE
+ADD TO CART' does not contain 'MOBILE'</status>
+</test>
+<status status="FAIL" starttime="20220225 22:46:50.845" endtime="20220225 22:47:29.138"/>
+</suite>
+<status status="FAIL" starttime="20220225 22:46:46.164" endtime="20220225 22:47:29.141"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="2" skip="0">API</stat>
+<stat pass="1" fail="0" skip="0">TEST_1</stat>
+<stat pass="0" fail="1" skip="0">TEST_2</stat>
+</tag>
+<suite>
+<stat pass="2" fail="3" skip="0" id="s1" name="Tests">Tests</stat>
+<stat pass="1" fail="2" skip="0" id="s1-s1" name="Search Api Function">Tests.Search Api Function</stat>
+<stat pass="1" fail="1" skip="0" id="s1-s2" name="Search Function">Tests.Search Function</stat>
+</suite>
+</statistics>
+<errors>
+<msg timestamp="20220225 22:46:47.615" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+<msg timestamp="20220225 22:46:49.115" level="WARN">Keyword 'RequestsLibrary.Post Request' is deprecated. Please use `POST On Session` instead.</msg>
+</errors>
+</robot>
